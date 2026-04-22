@@ -2,14 +2,14 @@ package com.praktikumDB.deploy.controller;
 
 import com.praktikumDB.deploy.model.User;
 import com.praktikumDB.deploy.service.UserService;
-import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Repository
-@RequestMapping ("/api/users")
+@RestController
+@RequestMapping("/api/users")
 public class UserController {
+
     private final UserService userService;
 
     public UserController(UserService userService) {
@@ -17,28 +17,28 @@ public class UserController {
     }
 
     @PostMapping
-    public String createUser(@RequestBody User request){
+    public String createUser(@RequestBody User request) {
         userService.addUser(request);
-        return "user created succesfully";
+        return "user created successfully";
     }
 
     @GetMapping
-    public List<User> getAllUsers(){
+    public List<User> getAllUsers() {
         return userService.getAllUsers();
     }
 
     @GetMapping("/{id}")
-    public User getUserById(@PathVariable String id){
+    public User getUserById(@PathVariable String id) {
         return userService.getUserById(id);
     }
 
-    @DeleteMapping
+    @DeleteMapping("/{id}") // 🔥 FIX
     public String deleteUser(@PathVariable String id) {
         userService.deleteUser(id);
         return "user deleted successfully";
     }
 
-    @PutMapping
+    @PutMapping("/{id}") // 🔥 FIX
     public String updateUser(@PathVariable String id, @RequestBody User request) {
         userService.updateUser(id, request);
         return "user updated successfully";

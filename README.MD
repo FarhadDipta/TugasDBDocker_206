@@ -1,11 +1,11 @@
 ## IMAGE DOCKER
-![img.png](target/img.png)
+![img.png](SS/img.png)
 
 ## CONTAINER
-![img_1.png](target/img_1.png)
+![img_1.png](SS/img_1.png)
 
 ## WEB SAYA
-![img_4.png](target/img_4.png)
+![img_4.png](SS/img_4.png)
 
 ## WEB TEMAN
-![img_3.png](target/img_3.png)
+![img_3.png](SS/img_3.png)
